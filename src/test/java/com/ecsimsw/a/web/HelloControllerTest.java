@@ -8,8 +8,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringRunner.class)
 //Jnit 프레임워크에서 Runner을 실행할 때, 'SpringRunner' 실행자도 같이 실행시킨다.
@@ -29,7 +30,19 @@ public class HelloControllerTest {
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
+        }
 
-        // '/hello'로 get 요청을 하고, status가 200이 맞는지, content가 'hello'가 맞는지 확인한다.
+    @Test
+    public void doesReturnHelloDto() throws Exception{
+        String name ="jinhwan";
+        int age =24;
+
+        mvc.perform(
+                get("/hello/dto")
+                        .param("name", name)
+                        .param("age", String.valueOf(age))
+        ).andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.age",is(age)));
     }
 }
