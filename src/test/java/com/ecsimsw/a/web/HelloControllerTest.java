@@ -1,5 +1,6 @@
 package com.ecsimsw.a.web;
 
+import com.ecsimsw.a.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class HelloControllerTest {
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
-        }
+    }
 
     @Test
     public void doesReturnHelloDto() throws Exception{
