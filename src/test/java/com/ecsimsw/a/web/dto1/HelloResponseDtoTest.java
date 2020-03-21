@@ -1,4 +1,4 @@
-package com.ecsimsw.a.web.dto;
+package com.ecsimsw.a.web.dto1;
 
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
