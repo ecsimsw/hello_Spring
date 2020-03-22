@@ -24,24 +24,6 @@ public class HelloController {
     @getName
     @GetMapping("/aspectTest")
     public String aspect(){
-
-        for(int i=0; i<1000; i++){
-            if(i%100 ==0){
-                System.out.println(i);
-            }
-        }
-
         return "hello";
     }
-
-
-    @Autowired
-    String jinhwan;
-
-    @getName
-    @GetMapping("/master")
-    public String master(){
-        return  jinhwan;
-    }
-
 }
