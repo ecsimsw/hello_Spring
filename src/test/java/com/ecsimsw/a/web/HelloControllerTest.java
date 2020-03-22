@@ -34,6 +34,14 @@ public class HelloControllerTest {
     }
 
     @Test
+    public void doesReturnMaster() throws Exception {
+        String master = "jinhwan";
+        mvc.perform(get("/master"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(master));
+    }
+
+    @Test
     public void doesReturnHelloDto() throws Exception{
         String name ="jinhwan";
         int age =24;
