@@ -5,8 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration // Bean 구성
-@ComponentScan("com.ecsimsw.a") // Bean Scan
+
+//@Configuration // Bean 구성
+//@ComponentScan("com.ecsimsw.a") // Bean Scan
 public class ApplicationConfig {
 /*
     @Bean
@@ -20,3 +21,4 @@ public class ApplicationConfig {
     }
     */
 }
+
