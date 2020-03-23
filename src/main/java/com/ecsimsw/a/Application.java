@@ -8,18 +8,18 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-
+@SpringBootApplication
 public class Application {
     public static void main(String[] args){
+
+        /*
         //Bean Configuration by Java _ ApplicationConfig
         AnnotationConfigApplicationContext context =
            new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
         Person person = (Person)context.getBean(Person.class);
         person.say();
-
-
-
-        //SpringApplication.run(Application.class, args);
+         */
+        SpringApplication.run(Application.class, args);
     }
 }
