@@ -1,5 +1,5 @@
 
-package com.ecsimsw.a;
+package com.ecsimsw.a.DI_practices;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

@@ -1,7 +1,6 @@
-package com.ecsimsw.a;
+package com.ecsimsw.a.DI_practices;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -34,8 +33,7 @@ public class Person {
     //3. Field에 빈 주입
     @Autowired
     Body body;
-
-     */
+*/
 
     Body body;
 
@@ -45,6 +43,7 @@ public class Person {
 
         body.gender();
     }
+
 
 
     void say(){
