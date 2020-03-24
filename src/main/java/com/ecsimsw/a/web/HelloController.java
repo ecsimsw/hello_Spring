@@ -1,8 +1,7 @@
 package com.ecsimsw.a.web;
 
-import com.ecsimsw.a.getName;
+import com.ecsimsw.a.AOP_practices.getName;
 import com.ecsimsw.a.web.dto.HelloResponseDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
