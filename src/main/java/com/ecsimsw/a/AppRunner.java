@@ -1,6 +1,6 @@
 package com.ecsimsw.a;
 
-import com.ecsimsw.a.applicationEventPublisher.Event;
+import com.ecsimsw.a.web.applicationEventPublisher.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.context.ApplicationContext;

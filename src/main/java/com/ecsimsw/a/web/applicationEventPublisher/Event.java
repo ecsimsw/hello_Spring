@@ -1,4 +1,4 @@
-package com.ecsimsw.a.applicationEventPublisher;
+package com.ecsimsw.a.web.applicationEventPublisher;
 
 public class Event {
 
