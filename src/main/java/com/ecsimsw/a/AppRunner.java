@@ -1,6 +1,5 @@
 package com.ecsimsw.a;
 
-import com.ecsimsw.a.web.applicationEventPublisher.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.context.ApplicationContext;
@@ -20,6 +19,5 @@ public class AppRunner implements org.springframework.boot.ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception{
-        ctx.publishEvent(new Event("Event0",0));
     }
 }
