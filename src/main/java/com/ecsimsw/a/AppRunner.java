@@ -1,5 +1,6 @@
 package com.ecsimsw.a;
 
+import com.ecsimsw.a.applicationEventPublisher.Event;
 import com.ecsimsw.a.resourceLoader.RL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -10,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class AppRunner implements org.springframework.boot.ApplicationRunner {
 
     @Autowired
@@ -21,5 +23,6 @@ public class AppRunner implements org.springframework.boot.ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception{
         RL rl = new RL(ctx);
+        ctx.publishEvent(new Event("sdf",0));
     }
 }
