@@ -2,6 +2,7 @@ package com.ecsimsw.a;
 
 import com.ecsimsw.a.applicationEventPublisher.Event;
 import com.ecsimsw.a.resourceLoader.RL;
+import com.ecsimsw.a.validation.Validation;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -13,27 +14,18 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
-
+import org.springframework.validation.Validator;
 @Component
 public class AppRunner implements org.springframework.boot.ApplicationRunner {
 
     @Autowired
-    ResourceLoader resourceLoader;
-
-    @Autowired
-    ApplicationContext ctx;
+    Validator validator;
 
     @Override
     public void run(ApplicationArguments args) throws Exception{
-        System.out.println(resourceLoader.getClass());
+        System.out.println(validator);
 
-        var ctx = new ClassPathXmlApplicationContext();
-        System.out.println(ctx.getClass());
+        Validation v = new Validation(validator);
 
-
-        Resource resource_classPath = resourceLoader.getResource("classpath:ecsimsw.txt");
-        System.out.println(resource_classPath.getClass());
-        System.out.println(resource_classPath.exists());
-        System.out.println(resource_classPath.getDescription());
     }
 }
