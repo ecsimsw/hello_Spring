@@ -6,9 +6,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(
-        value = "prototype"
-)
+@Scope(value = "prototype")
 public class Proto {
 
     @Autowired

@@ -18,30 +18,14 @@ import org.springframework.core.io.Resource;
 
 @SpringBootApplication
 public class Application {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
-ApplicationContext ctx = new ClassPathXmlApplicationContext();
+        ApplicationContext ctx
+                = new AnnotationConfigApplicationContext(ApplicationConfigure.class);
 
-Resource resourceClassPath = ctx.getResource("testFile.txt");
-System.out.println(resourceClassPath.getClass());
-System.out.println(resourceClassPath.getURI().getPath());
-System.out.println(resourceClassPath.exists());
+        Action action = (Action)ctx.getBean("action");
+        action.action1();
+        action.action2();
 
-System.out.println();
-
-Resource resourceFilePath = ctx.getResource("file:///C:/Users/luraw/git/hello_Spring/build/resources/main/testFile.txt");
-System.out.println(resourceFilePath.getClass());
-System.out.println(resourceFilePath.getURI().getPath());
-System.out.println(resourceFilePath.exists());
-
-
-        // resource의 타입은 location 문자열과 ApplicationContext의 타입에 따라 결정된다.
-        // ClassPathXmlApplicationContext -> ClassPathResource
-        // FileSystemXmlApplicationContext -> FileSystemResource
-        // WebApplicationContext -> ServletContextResource
-        // 대부분의 경우 WebApplicationContext를 사용하기때문에 ServletContextResource를 사용한다.
-
-        // 또는 prefix를 사용해서 강제할 수 도 있다.
-        // classpath: 와 file:
     }
 }
