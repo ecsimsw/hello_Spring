@@ -1,8 +1,7 @@
-package com.ecsimsw;
+package com.ecsimsw.SpringBasic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component

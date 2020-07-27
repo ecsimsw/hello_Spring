@@ -1,4 +1,4 @@
-package com.ecsimsw;
+package com.ecsimsw.SpringBasic;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

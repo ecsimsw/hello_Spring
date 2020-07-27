@@ -1,4 +1,4 @@
-package com.ecsimsw;
+package com.ecsimsw.SpringBasic;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

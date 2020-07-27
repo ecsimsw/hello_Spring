@@ -1,4 +1,4 @@
-package com.ecsimsw;
+package com.ecsimsw.SpringBasic;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
