@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServlet;
+
 @Controller
 public class EventController {
 
@@ -22,4 +24,5 @@ public class EventController {
         model.addAttribute("events", eventService.getEvents());
         return "event";
     }
+
 }
