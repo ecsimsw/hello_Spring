@@ -24,13 +24,10 @@ public class SampleControllerTest{
     @Test
     public void hello() throws Exception{
         mockMvc.perform(
-                get("/hello")
-                .header(HttpHeaders.AGE,"111")
-                .param("name","test")
-                )
+                get("/hello/1"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string("hello"))
+                .andExpect(content().string("1"))
                 .andExpect(handler().handlerType(SampleController.class));
     }
 }

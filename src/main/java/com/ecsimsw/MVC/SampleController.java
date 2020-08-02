@@ -4,26 +4,19 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class SampleController {
-    @RequestMapping(value="hello", headers = HttpHeaders.AGE)
-    @PostMapping
-    public String Test1(){
-        return "hello";
-    }
-    @RequestMapping(value="hello", headers = "!"+HttpHeaders.AGE)
-    public String Test2(){
-        return "hello";
-    }
-    @RequestMapping(value="hello", headers = HttpHeaders.AGE+"=111")
-    public String Test3(){
-        return "hello";
-    }
-
-    @RequestMapping(value="hello", params = "name=test")
-    public String Test4(){
-        return "hello";
+    // pathVariable
+    @GetMapping(value="/hello/{id}")
+    public String hello(@PathVariable Integer id){
+        // @PathVariable("id") String something
+        // 자동 형 변환 
+        return String.valueOf(id);
     }
 }
 
