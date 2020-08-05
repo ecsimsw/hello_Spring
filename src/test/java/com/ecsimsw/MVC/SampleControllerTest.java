@@ -23,27 +23,11 @@ public class SampleControllerTest{
 
     @Test
     public void hello() throws Exception{
-//        mockMvc.perform(
-//                get("/hello/1"))
-//                .andDo(print())
-//                .andExpect(status().isOk())
-//                .andExpect(content().string("1"))
-//                .andExpect(handler().handlerType(SampleController.class));
-
         mockMvc.perform(
-                get("/hello?name=jinhwan&key=value")
-                .param("age","100"))
+                get("/hello"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string("jinhwanvalue100"))
-                .andExpect(handler().handlerType(SampleController.class));
-
-        mockMvc.perform(
-                get("/member?name=jinhwan")
-                        .param("age","100"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("jinhwan"))
+                .andExpect(request().sessionAttribute("test",notNUll))
                 .andExpect(handler().handlerType(SampleController.class));
     }
 
