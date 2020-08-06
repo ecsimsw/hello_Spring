@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -24,11 +25,18 @@ public class SampleControllerTest{
     @Test
     public void hello() throws Exception{
         mockMvc.perform(
-                get("/hello"))
+                get("/login").param("memberId", "ecsimsw"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(request().sessionAttribute("test",notNUll))
+                .andExpect(request().sessionAttribute("test",notNullValue()))
                 .andExpect(handler().handlerType(SampleController.class));
-    }
 
+
+        mockMvc.perform(
+                get("/complete"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(handler().handlerType(SampleController.class))
+                .andReturn().getRequest().getSession();
+    }
 }
