@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>home</title>
+</head>
+<body>
+<h1> home</h1>
+<form method = "post" action ="/signUp">
+    <input type = "text" name = "name" th:value="${member.name}"/>
+    <input type = "text" name = "pw" th:value="${member.pw}"/>
+</form>
+</body>
+</html>
