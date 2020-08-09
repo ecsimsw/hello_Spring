@@ -26,6 +26,12 @@ public class SampleController {
 
     @Autowired MemberValidator memberValidator;
 
+    @ExceptionHandler(RuntimeException.class)
+    public String memberException(Model model, RuntimeException exception){
+        model.addAttribute("message","Runtime Error");
+        return "error";
+    }
+
     @GetMapping(value="/signUp")
     public String preSignUp(){
         return "signUp";
@@ -36,7 +42,10 @@ public class SampleController {
 
         memberValidator.validate(member, bindingResult);
 
-        if(bindingResult.hasErrors()){ return "signUp"; }
+        if(bindingResult.hasErrors()){
+            throw new RuntimeException();
+            //return "signUp";
+        }
 
         model.addAttribute("member", member);
         return "home";

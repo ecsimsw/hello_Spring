@@ -8,9 +8,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Component
-public class MemberValidator {
-    public void validate(Object object, Errors error){
-        Member member = (Member)object;
+public class MemberValidator{
+    public void validate(Member member, Errors error){
         if(member.name.equals("Master")){
             error.rejectValue("name", "unValidName", "You can't use Master in Name");
         }
