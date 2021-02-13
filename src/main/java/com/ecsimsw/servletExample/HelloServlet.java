@@ -1,6 +1,5 @@
 package com.ecsimsw.servletExample;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,21 +8,23 @@ import java.io.IOException;
 public class HelloServlet extends HttpServlet {
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         System.out.println("init");
-        super.init();
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("hello");
-        super.doGet(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.getWriter().println("doGet");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.getWriter().println("doPost");
     }
 
     @Override
     public void destroy() {
         System.out.println("destroy");
-        super.destroy();
     }
 }
 
